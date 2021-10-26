@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// class --> 리액트 훅(함수를 쓰며 리액트의 기능을 사용하는 방법)
+// let clock = document.getElementById("clock");
 
-function helloName(name){
-  return name.nick;
+// setInterval(function(){
+//   clock.innerHTML = new Date().toLocaleTimeString();
+// });
+
+function clock(){
+  const element = (
+    <div>
+      <h1>Hello, everyone!</h1>
+      <h2>지금은 {new Date().toLocaleTimeString()}입니다.</h2>
+    </div>
+  )
+  ReactDOM.render(element, document.getElementById("root"));
 }
 
-const name = {
-  nick : "noonsun",
-}
-
-const hello = <h1>hello {helloName(name)}.</h1>
-
-ReactDOM.render(hello, document.getElementById("root"));
+setInterval(clock, 1000);
